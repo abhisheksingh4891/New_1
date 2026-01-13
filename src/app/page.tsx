@@ -6,35 +6,26 @@ import { Product } from "@/types/product";
 import Loading from "./loading";
 
 export default function Home() {
-
-  //  i had to use useEffect because on hosting or in app router also somethimes these free api works sometimes dont work 
+  //  i had to use useEffect because on hosting or in app router also somethimes these free api works sometimes dont work
   // but you can check src/lib.product.ts for api call
   // const products = await getProducts();
-  
+
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const controller = new AbortController();
-
-    fetch("https://fakestoreapi.com/products", {
-      signal: controller.signal,
-    })
-      .then(res => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => {
         if (!res.ok) throw new Error("API error");
         return res.json();
       })
-      .then(data => setProducts(data))
-      .catch(err => {
-        if (err.name !== "AbortError") {
-          console.error(err);
-          setError(true);
-        }
+      .then((data) => setProducts(data))
+      .catch((err) => {
+        console.error(err);
+        setError(true);
       })
       .finally(() => setLoading(false));
-
-    return () => controller.abort();
   }, []);
 
   if (loading) {
