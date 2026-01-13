@@ -7,6 +7,7 @@ import Loading from "./loading";
 
 export default function Home() {
   //  i had to use useEffect because on hosting or in app router also somethimes these free api works sometimes dont work
+  // making ssr page client side
   // but you can check src/lib.product.ts for api call
   // const products = await getProducts();
 
