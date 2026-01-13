@@ -1,4 +1,4 @@
-# 🛒 Product Explorer Dashboard 5. 
+# 🛒 Product Explorer Dashboard. 
 Open [https://demo-ecommerce-demo.netlify.app/].
 
 A production-ready frontend application built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**. This dashboard demonstrates component architecture, API integration, and responsive design.
