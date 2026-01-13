@@ -4,9 +4,8 @@ Open [https://demo-ecommerce-demo.netlify.app/].
 A production-ready frontend application built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**. This dashboard demonstrates component architecture, API integration, and responsive design.
 
 i had to use useEffect because on hosting or in app router also somethimes these free api works sometimes dont work making ssr page client side but you can check src/lib.product.ts for api call
-
- const products = await getProducts();
- const product = await getProduct(id);
+const products = await getProducts();
+const product = await getProduct(id);
 ---
 
 ## 🚀 Setup Instructions
