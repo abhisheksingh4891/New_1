@@ -3,7 +3,11 @@ import { Product } from "@/types/product";
 
 export async function getProducts() {
   try {
+    // console.log("reached");
+    
     const res = await axios.get("https://fakestoreapi.com/products");
+    // console.log("reached", res);
+
     return res.data;
   } catch (error) {
     console.error("Build-time fetch failed:", error);
